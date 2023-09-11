@@ -6,6 +6,7 @@
 #' @importFrom dplyr case_when
 #' @examples
 #' fnr_to_bday(fnr = 19053826639)
+#' @export
 fnr_to_bday = function(fnr) {
 
   if (grepl("[^0-9]", fnr)) {
@@ -38,5 +39,3 @@ fnr_to_bday = function(fnr) {
 
   return(birth_date)
 }
-
-fnr_to_bday(fnr = 19053826639)
