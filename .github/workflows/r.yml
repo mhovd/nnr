@@ -34,16 +34,7 @@ jobs:
         install.packages('remotes')
         remotes::install_deps(dependencies = TRUE)
       shell: Rscript {0}
-
-    - name: Run unit tests
-      run: |
-        if (file.exists('tests/testthat.R')) {
-          source('tests/testthat.R')
-        } else {
-          message('No testthat tests found.')
-        }
-      shell: Rscript {0}
-
+      
     - name: Check package
       run: |
         rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
